@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine Website</title>
+  <style>
+    :root {
+      --primary: #ff4d6d;
+      --card: #ffffff;
+      --bg: #fff0f5;
+      --text: #333;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 700px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,77,109,0.15);
+    }
+
+    .emoji {
+      font-size: 56px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: var(--primary);
+      font-size: 36px;
+      margin: 0;
+      font-style: italic;
+    }
+
+    p {
+      font-size: 22px;
+      color: var(--text);
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+
+    .highlight {
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    button {
+      border: none;
+      padding: 14px 26px;
+      font-size: 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      margin: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .yes {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 6px 14px rgba(255,77,109,0.4);
+    }
+
+    .no {
+      background: #eee;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 20px;
+      color: var(--primary);
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="emoji">💌</div>
+
+    <h1>
+      Dear Jelo Piamonte,
+    </h1>
+
+    <p>
+      Will you be my <span class="highlight">Valentine</span>? 💗
+    </p>
+
+    <div class="buttons">
+      <button class="yes" onclick="showMessage()">Yes 💖</button>
+      <button class="no" onclick="moveButton(this)">No 😢</button>
+    </div>
+
+    <div id="message" class="message">
+      Yay! You made my day 💕
+    </div>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("message").style.display = "block";
+    }
+
+    function moveButton(btn) {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
+
+</body>
+</html>
